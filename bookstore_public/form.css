@@ -1,0 +1,84 @@
+body{
+  background-color: #1a1a1a ;
+  width:100%;
+  height:100vh;
+  margin:0;
+  color: 5d3a1a;
+  font-family: 'Candara', sans-serif;
+  font-size: 16px;
+  
+}
+h1,p {
+     text-align:center;
+     margin: 1em auto;
+     color: #FACC15
+    
+  }
+
+#description{
+  text-align: center;
+}
+form {
+    border:2px solid #FACC15;
+    width: 70vw;
+    max-width: 700px;
+    min-width: 300px;
+    margin: 0 auto;
+    font-size: large;
+    background-color:#000000;
+    color:aliceblue;
+}
+label {
+    display: block;
+    line-height: 1.5;
+    }
+  
+.inline {
+    width: unset;
+    margin: 0 0.5em 0 0;
+  
+  }
+
+  input,
+  textarea,
+  select {
+    margin: 10px 0 0 0;
+    width: 100%;
+    line-height: 1.8;
+    border:2px solid #FACC15;
+
+  }
+  
+  input[type=checkbox] { 
+    vertical-align: middle; 
+    position: relative; 
+    bottom: 1px; 
+    
+} 
+  .formcheckbox-label {
+    
+  }
+
+  #file{
+    border: none;
+  }
+
+  #submit{
+      background-color:#FACC15;
+      border: none;
+      color: rgb(0, 0, 0);
+      padding: 15px 32px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 16px;
+      margin: 4px 2px;
+      cursor: pointer;
+  }
+
+  #videos{
+    text-align: center;
+  }
+
+  
+

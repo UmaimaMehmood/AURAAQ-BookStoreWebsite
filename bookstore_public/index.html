@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Auraaq</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Nastaliq+Urdu&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="nav-left">
+      <a href="awraq.html" class="btn">Bookstore</a>
+      <a href="#about" class="btn">About Us</a>
+    </div>
+    <div class="logo">
+      <img src="newlogo.png" alt="Auraaq Logo" class="logo-img" />
+    </div>
+    <div class="nav-right">
+      <a href="#bookclub" class="btn">Book Club</a>
+      <a href="#contact" class="btn">Contact</a>
+      <div class="user-icon" onclick="openLoginModal()">
+        <svg viewBox="0 0 24 24">
+          <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
+        </svg>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Login Modal -->
+  <div class="modal-overlay" id="loginModal">
+    <div class="modal">
+      <button class="close-btn" onclick="closeModal()">&times;</button>
+      <h2 class="form-title">Login</h2>
+      <form id="loginForm">
+        <div class="form-group">
+          <label>Email:</label>
+          <input type="email" class="form-input" placeholder="Enter your email" required>
+        </div>
+        <div class="form-group">
+          <label>Password:</label>
+          <input type="password" class="form-input" placeholder="Enter your password" required>
+        </div>
+        <button type="submit" class="submit-btn login-btn">Login</button>
+      </form>
+      <div class="form-switch">
+        Don't have an account? <a href="#" onclick="switchToSignup()">Sign up</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Signup Modal -->
+  <div class="modal-overlay" id="signupModal">
+    <div class="modal">
+      <button class="close-btn" onclick="closeModal()">&times;</button>
+      <h2 class="form-title">Create Account</h2>
+      <p class="form-subtitle">Join Auraaq to explore more</p>
+      <form id="signupForm">
+        <div class="form-group">
+          <input type="text" class="form-input" placeholder="Full Name" required>
+        </div>
+        <div class="form-group">
+          <input type="email" class="form-input" placeholder="Email" required>
+        </div>
+        <div class="form-group">
+          <input type="password" class="form-input" placeholder="Password" required>
+        </div>
+        <div class="form-group">
+          <input type="password" class="form-input" placeholder="Confirm Password" required>
+        </div>
+        <button type="submit" class="submit-btn">Sign Up</button>
+      </form>
+      <div class="form-switch">
+        Already have an account? <a href="#" onclick="switchToLogin()">Log in</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Home Section -->
+  <section id="home" style="background-color: #ffffff; min-height: 100vh; width: 100%;">
+    <div class="home-content main-container">
+      <div class="home-text">
+        <h1>From <span class="dynamic-tagline"></span>, Auraaq it.</h1>
+        <!--<p>We connect vendors and businesses through innovative solutions, simplifying commerce for everyone.</p>-->
+      </div>
+      <div class="home-image">
+        <img src="books.png" alt="Home Side Image">
+      </div>
+    </div>
+  </section>
+
+  <!-- Bookstore Section -->
+<section id="bookstore" style="background-color: #f9f9f9; padding: 60px 0; width: 100%;">
+  <div class="main-container">
+    <h2 style="text-align: center; font-size: 2.5rem; margin-bottom: 30px;">Our Bookstore</h2>
+    <div class="books-grid">
+      <div class="book-card" onclick="openView('Jannat kay Pattay', 'jannat_kai_pattay2.png', 'Rs 1200', 'نمرہ احمد', 'ایک دلچسپ کہانی جو محبت، دوستی اور زندگی کے مختلف پہلوؤں کو بیان کرتی ہے۔')">
+        <img src="https://zanjabeelbookstore.com/cdn/shop/files/WhatsAppImage2025-04-16at19.36.34_720x.jpg?v=1744874103" alt="Jannat Ke Pattay">
+        <h3>Jannat Ke Pattay</h3>
+        <p>Rs 1500</p>
+      </div>
+
+      <div class="book-card" onclick="openView('Namal', 'nummal.png', 'Rs 2800', 'نمرہ احمد', 'ایک اور دلچسپ ناول جو قارئین کو مسحور کر دیتا ہے۔')">
+        <img src="https://zanjabeelbookstore.com/cdn/shop/files/KHA03269_720x.jpg?v=1715750925" alt="نمل">
+        <h3>Namal</h3>
+        <p>Rs 2800</p>
+      </div>
+
+      <div class="book-card" onclick="openView('Tabeer Planner', 'tabeer.png', 'Rs 1900', 'نامعلوم', 'خوبصورت ڈیزائن کے ساتھ ایک مکمل پلینر۔')">
+        <img src="https://soz.com.pk/cdn/shop/products/Tabeer_4_590x.jpg?v=1672504927" alt="تعبیر پلینر">
+        <h3>Tabeer Planner</h3>
+        <p>Rs 1900</p>
+      </div>
+
+      <div class="book-card" onclick="openView('Musawir Journal', 'musawir.png', 'Rs 1100', 'نامعلوم', 'تخلیقی لکھنے کے لیے ایک بہترین جرنل۔')">
+        <img src="https://soz.com.pk/cdn/shop/products/Musawar_-A5Blank-HardbackBulletJournal_590x.jpg?v=1662389554" alt="مصّور جرنل">
+        <h3>Musawir Journal</h3>
+        <p>Rs 1100</p>
+      </div>
+    </div>
+    <div style="text-align: center; margin-top: 30px;">
+      <a href="awraq.html" class="shop-btn">Shop Now</a>
+    </div>
+  </div>
+</section>
+
+
+<!-- About Section -->
+<section id="about" style="width: 100%; padding: 60px 0; background: #f2e4c3; border-radius: 60px;">
+  <div class="main-container" style="display: flex; align-items: center; justify-content: center; gap: 40px;">
+    
+    <!-- Left Side - Heading -->
+    <div class="about-left">
+      <h2 class="highlight-title">GET TO KNOW <span class="highlight">ABOUT US</span></h2>
+    </div>
+
+    <!-- Right Side - Book -->
+    <div class="book">
+      <div class="pages">
+
+        <div class="page" style="background-image: url('bookcover.png'); background-size: cover; background-position: center;"></div>
+        <div class="page"></div>
+                <div class="page">
+      <h1 style=" font-family: 'Times New Roman', Times, serif; padding:10px; margin-top:30px background-color:"> AURAAQ</h1>
+        <p>
+            We are Auraaq. A group of enthusiastic bibliophilic fangirls who wanted to build a bookstore that sells not just books and planners, but gives the readers a chance to relive their bookish love.
+        </p>
+        <p>
+            We love creating. So we create. We love spreading colours. So we fill our creations with the best colours out there. There are catchphrases from books that stay with us for years. We make these phrases and memories tangible by pasting them on items of daily use.
+        </p>
+        <p>
+            We hope to see you visiting our store more often!
+        </p>
+            <p>Kind Regards<br>Team Auraaq</p>
+            </div>
+        <div class="page"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- Book Club Section -->
+<section id="bookclub">
+  <div class="main-container">
+    <h2>Join Our Monthly Book Club</h2>
+    <p>Register now and become part of engaging discussions and exclusive content.</p>
+    <a href="form.html" class="shop-btn">Register Here</a>
+  </div>
+</section>
+
+<!-- Footer -->
+ <section id="contact">
+<footer class="custom-footer">
+  <div class="footer-container">
+    <div class="footer-logo">
+      <img src="newlogo.png" alt="Auraaq Logo" />
+    </div>
+    <div class="footer-links">
+      <div class="footer-column">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="#">Auraaq </a></li>
+          <li><a href="#">Newsroom</a></li>
+          <li><a href="#">Careers</a></li>
+        </ul>
+      </div>
+      <div class="footer-column">
+        <h4>Social Media</h4>
+        <ul class="social-icons">
+          <li><a href="#"><i class="fab fa-facebook-f"></i> Facebook</a></li>
+          <li><a href="#"><i class="fab fa-instagram"></i> Instagram</a></li>
+          <li><a href="#"><i class="fab fa-youtube"></i> YouTube</a></li>
+          <li><a href="#"><i class="fab fa-linkedin-in"></i> LinkedIn</a></li>
+        </ul>
+      </div>
+      <div class="footer-column store-buttons">
+        <a href="#"><img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg" alt="Google Play" /></a>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2025 Auraaq. All rights reserved.</p>
+  </div>
+</footer>
+<script src="script.js"></script>
+</body>
+</html>

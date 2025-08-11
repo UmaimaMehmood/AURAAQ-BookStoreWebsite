@@ -1,0 +1,219 @@
+<!DOCTYPE.html>
+<html>
+    <head>
+        <meta lang="en">
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Awraq BookStore</title>  
+        <link href="awraq.css" rel="stylesheet"/>
+        <script src="https://kit.fontawesome.com/92d70a2fd8.js" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Crimson+Pro&family=Literata">
+        
+    </head>
+    <body>
+        <script src="book_store_urdu.js"></script>
+    <header class="header">
+        <div class="header-left">
+            <span class="Category">CATEGORY</span>
+            <h1 class="Books">BOOKS</h1>
+            <div class="filters">
+                <button class="filter-btn">TAGS</button>
+                <button class="filter-btn">SORT BY</button>
+            </div>
+        </div>
+
+
+  <div class="cart" onclick="openCart()">
+    
+    <i class="fa-solid fa-cart-shopping"></i>
+    <p id="count">0</p>
+  </div>
+
+  <div class="cart-overlay" onclick="closeCart()"></div>
+
+    <div class="cart-sidebar" id="cartSidebar">
+        <div class="cart-sidebar-header">
+            <h3 class="cart-sidebar-title">Shopping Cart</h3>
+            <button class="close-btn" onclick="closeCart()">
+                
+                <i class="fa-solid fa-times"></i>
+            </button>
+        </div>
+
+        <div class="cart-sidebar-content" id="cartContent">
+            <!-- Cart items will be dynamically inserted here -->
+        </div>
+
+        <div class="cart-footer">
+            <div class="cart-total">
+                <span>Total: </span>
+                <span id="cartTotal">Rs0.00</span>
+            </div>
+            <button class="checkout-btn" onclick="checkout()">
+                Proceed to Checkout
+            </button>
+        </div>
+    </div>
+
+</header>
+
+<section id="bookstore" style="padding: 60px 0; width: 100%;">
+  <div class="main-container">
+        
+        <div class="books-grid">
+
+        <div class="book-card" onclick="openView('جنت کے پتے', 'https://zanjabeelbookstore.com/cdn/shop/files/WhatsAppImage2025-04-16at19.36.34_720x.jpg?v=1744874103', 'Rs 1200', 'نمرہ احمد', 'ایک دلچسپ کہانی جو محبت، دوستی اور زندگی کے مختلف پہلوؤں کو بیان کرتی ہے۔')">
+            <img src="https://zanjabeelbookstore.com/cdn/shop/files/WhatsAppImage2025-04-16at19.36.34_720x.jpg?v=1744874103" alt="Jannat Ke Pattay">
+            <h3>Jannat Ke Pattay</h3>
+            <p class="pricee">Rs 1200</p>
+        </div>
+
+         <div class="book-card" onclick="openView('نمل', 'https://zanjabeelbookstore.com/cdn/shop/files/KHA00445_de16d2e2-622b-4846-ad84-37f1e444fe8f_720x.jpg?v=1737531798', 'Rs 2800', 'نمرہ احمد', 'ایک اور دلچسپ ناول جو قارئین کو مسحور کر دیتا ہے۔')">
+            <img src="https://zanjabeelbookstore.com/cdn/shop/files/KHA00445_de16d2e2-622b-4846-ad84-37f1e444fe8f_720x.jpg?v=1737531798" alt="نمل">
+            <h3>Mala</h3>
+            <p class="pricee">Rs 1500</p>
+        </div>
+
+        <div class="book-card" onclick="openView('نمل', 'https://zanjabeelbookstore.com/cdn/shop/files/KHA03269_720x.jpg?v=1715750925', 'Rs 2800', 'نمرہ احمد', 'ایک اور دلچسپ ناول جو قارئین کو مسحور کر دیتا ہے۔')">
+            <img src="https://zanjabeelbookstore.com/cdn/shop/files/KHA03269_720x.jpg?v=1715750925" alt="نمل">
+            <h3>Namal</h3>
+            <p class="pricee">Rs 2800</p>
+        </div>
+
+        <div class="book-card" onclick="openView('تعبیر پلینر', 'https://soz.com.pk/cdn/shop/products/Tabeer_4_590x.jpg?v=1672504927', 'Rs 1900', 'نامعلوم', 'خوبصورت ڈیزائن کے ساتھ ایک مکمل پلینر۔')">
+        <img src="https://soz.com.pk/cdn/shop/products/Tabeer_4_590x.jpg?v=1672504927" alt="تعبیر پلینر">
+        <h3>Tabeer Planner</h3>
+        <p class="pricee">Rs 1700</p>
+      </div>
+
+        <div class="book-card" onclick="openView('مصّور جرنل', 'https://soz.com.pk/cdn/shop/products/Musawar_-A5Blank-HardbackBulletJournal_590x.jpg?v=1662389554', 'Rs 1100', 'نامعلوم', 'تخلیقی لکھنے کے لیے ایک بہترین جرنل۔')">
+            <img src="https://soz.com.pk/cdn/shop/products/Musawar_-A5Blank-HardbackBulletJournal_590x.jpg?v=1662389554" alt="مصّور جرنل">
+            <h3>Musawir Journal</h3>
+            <p class="pricee">Rs 1900</p>
+        </div>
+
+
+        <div class="book-card" onclick="openView('ہم راز ڈایری', 'https://soz.com.pk/cdn/shop/products/Diariesfinals-10_590x.jpg?v=1628167938', 'Rs 1100', 'نامعلوم', 'تخلیقی لکھنے کے لیے ایک بہترین جرنل۔')">
+            <img id=book src="HumRaaz Dairy.webp">
+            <h3>HumRaaz Diary</h3>
+            <p class="pricee">Rs 1100</p>
+        </div>
+
+         <div class="book-card" onclick="openView('پوکیٹ پلینر','https://soz.com.pk/cdn/shop/files/DSC07566_590x.jpg?v=1738772826', 'Rs 1100', 'نامعلوم', 'تخلیقی لکھنے کے لیے ایک بہترین جرنل۔')">
+            <img id=book src="https://soz.com.pk/cdn/shop/files/DSC07566_590x.jpg?v=1738772826">
+            <h3>Pocket Planner</h3>
+            <p class="pricee">Rs 1000</p>
+        </div>
+
+
+         <div class="book-card" onclick="openView('کہکشاں پوکیٹ ڈائری  ', 'https://soz.com.pk/cdn/shop/products/Diariesfinals-10_590x.jpg?v=1628167938', 'Rs 1100', 'نامعلوم', 'تخلیقی لکھنے کے لیے ایک بہترین جرنل۔')">
+            <img id=book src="https://soz.com.pk/cdn/shop/files/DSC07558_590x.jpg?v=1738772450">
+            <h3>Kehkashan Pocket Diary</h3>
+            <p class="pricee">Rs 800</p>
+        </div>
+
+
+        <div class="book-card" onclick="openView('سورت گار پلینر', 'https://soz.com.pk/cdn/shop/files/DSC07418-2_590x.jpg?v=1735235718', 'Rs 1100', 'نامعلوم', 'تخلیقی لکھنے کے لیے ایک بہترین جرنل۔')">
+            <img id=book src="https://soz.com.pk/cdn/shop/files/DSC07418-2_590x.jpg?v=1735235718">
+            <h3>Suratgar Planner</h3>
+            <p class="pricee">Rs 1100</p>
+        </div>
+
+        <div class="book-card" onclick="openView('ہوم گرل', 'https://zanjabeelbookstore.com/cdn/shop/products/20201106_092519-01_720x.jpg?v=1712382193', 'Rs 1200', 'نمرہ احمد', 'ایک دلچسپ کہانی جو محبت، دوستی اور زندگی کے مختلف پہلوؤں کو بیان کرتی ہے۔')">
+            <img src="https://zanjabeelbookstore.com/cdn/shop/products/20201106_092519-01_720x.jpg?v=1712382193" alt="Jannat Ke Pattay">
+            <h3>Home Girl</h3>
+            <p class="pricee">Rs 2500</p>
+        </div>
+
+        <div class="book-card" onclick="openView('پیرِ کامل', 'https://imgs.search.brave.com/RUQFUOfOrwURI_Yj0SbZ44twVi4hlX9C4ICWbi0k5DA/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9pbWFn/ZXMubWVlc2hvLmNv/bS9pbWFnZXMvcHJv/ZHVjdHMvNDMyMzQ2/MDc2L3dtam5nXzUx/Mi53ZWJw', 'Rs 1200', 'نمرہ احمد', 'ایک دلچسپ کہانی جو محبت، دوستی اور زندگی کے مختلف پہلوؤں کو بیان کرتی ہے۔')">
+            <img src="https://imgs.search.brave.com/RUQFUOfOrwURI_Yj0SbZ44twVi4hlX9C4ICWbi0k5DA/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9pbWFn/ZXMubWVlc2hvLmNv/bS9pbWFnZXMvcHJv/ZHVjdHMvNDMyMzQ2/MDc2L3dtam5nXzUx/Mi53ZWJw" alt="Jannat Ke Pattay">
+            <h3>Peer e Kamil</h3>
+            <p class="pricee">Rs 1300</p>
+        </div>
+
+        <div class="book-card" onclick="openView('مصحف', 'https://zanjabeelbookstore.com/cdn/shop/products/IMG-20221202-WA0015_720x.jpg?v=1712382013', 'Rs 1200', 'نمرہ احمد', 'ایک دلچسپ کہانی جو محبت، دوستی اور زندگی کے مختلف پہلوؤں کو بیان کرتی ہے۔')">
+            <img src="https://zanjabeelbookstore.com/cdn/shop/products/IMG-20221202-WA0018_720x.jpg?v=1712382013" alt="Jannat Ke Pattay">
+            <h3>Mushaf</h3>
+            <p class="pricee">Rs 1700</p>
+        </div>
+
+        <div class="book-card" onclick="openView('حسن انجام', 'https://zanjabeelbookstore.com/cdn/shop/files/KHA02095_720x.jpg?v=1712382272', 'Rs 1200', 'نمرہ احمد', 'ایک دلچسپ کہانی جو محبت، دوستی اور زندگی کے مختلف پہلوؤں کو بیان کرتی ہے۔')">
+            <img src="https://zanjabeelbookstore.com/cdn/shop/files/KHA02095_720x.jpg?v=1712382272" alt="Jannat Ke Pattay">
+            <h3>Hussan Anjam</h3>
+            <p class="pricee">Rs 2800</p>
+        </div>
+
+        <div class="book-card" onclick="openView('آبِ حیات', 'aab-e-hayat_b.png', 'Rs 1200', 'نمرہ احمد', 'ایک دلچسپ کہانی جو محبت، دوستی اور زندگی کے مختلف پہلوؤں کو بیان کرتی ہے۔')">
+            <img src="aab-e-hayat_b.png" alt="Jannat Ke Pattay">
+            <h3>Aab-e-Hayat</h3>
+            <p class="pricee">Rs 1500</p>
+        </div>
+
+        <div class="book-card" onclick="openView('ولی', 'https://scontent.fkhi22-1.fna.fbcdn.net/v/t1.15752-9/496516046_1067892838122890_3160813102691708737_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=0024fc&_nc_ohc=Am-F_nFbtG4Q7kNvwFq2i2h&_nc_oc=AdmfHjrlsMm51WHF4WV9fvFrXu8wSZ0wPqbyqf6InzWURDaLPFcHIeh9dwbLiZ-YZnU&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=scontent.fkhi22-1.fna&oh=03_Q7cD2gH1uRtPgUPjY2WWMpSBmiOfQsR0sjFE8Cwfwb5AXhZtRg&oe=688131A5', 'Rs 1200', 'نمرہ احمد', 'ایک دلچسپ کہانی جو محبت، دوستی اور زندگی کے مختلف پہلوؤں کو بیان کرتی ہے۔')">
+            <img src="https://scontent.fkhi22-1.fna.fbcdn.net/v/t1.15752-9/496516046_1067892838122890_3160813102691708737_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=0024fc&_nc_ohc=Am-F_nFbtG4Q7kNvwFq2i2h&_nc_oc=AdmfHjrlsMm51WHF4WV9fvFrXu8wSZ0wPqbyqf6InzWURDaLPFcHIeh9dwbLiZ-YZnU&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=scontent.fkhi22-1.fna&oh=03_Q7cD2gH1uRtPgUPjY2WWMpSBmiOfQsR0sjFE8Cwfwb5AXhZtRg&oe=688131A5" alt="Jannat Ke Pattay">
+            <h3>Wali</h3>
+            <p class="pricee">Rs 1800</p>
+        </div>
+
+        <div class="book-card" onclick="openView('اِلہام', 'https://scontent.fkhi22-1.fna.fbcdn.net/v/t1.15752-9/504300687_698679956469011_2127303741626325426_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=0024fc&_nc_ohc=yGG0cRa3XV8Q7kNvwHGL5ML&_nc_oc=AdmW6--RT-sa7XRSG8bLk9cKX_cZZnzyeMVhO2APbXbiGB2cBCuq3KqjqYyG_4w38pk&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=scontent.fkhi22-1.fna&oh=03_Q7cD2gGHRBrozG6HZH087hmn0pASkCI7eAdfCxhwhkqCCP4Aqg&oe=68813856', 'Rs 1200', 'نمرہ احمد', 'ایک دلچسپ کہانی جو محبت، دوستی اور زندگی کے مختلف پہلوؤں کو بیان کرتی ہے۔')">
+            <img src="https://scontent.fkhi22-1.fna.fbcdn.net/v/t1.15752-9/504300687_698679956469011_2127303741626325426_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=0024fc&_nc_ohc=yGG0cRa3XV8Q7kNvwHGL5ML&_nc_oc=AdmW6--RT-sa7XRSG8bLk9cKX_cZZnzyeMVhO2APbXbiGB2cBCuq3KqjqYyG_4w38pk&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=scontent.fkhi22-1.fna&oh=03_Q7cD2gGHRBrozG6HZH087hmn0pASkCI7eAdfCxhwhkqCCP4Aqg&oe=68813856" alt="Jannat Ke Pattay">
+            <h3>Ilhaam</h3>
+            <p class="pricee">Rs 1900</p>
+        </div>
+
+        <div class="book-card" onclick="openView('اُم الیقین', 'https://scontent.fkhi22-1.fna.fbcdn.net/v/t1.15752-9/496514265_989348969943237_5007653057445102993_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=0024fc&_nc_ohc=BjDstEjR8OYQ7kNvwGHKyRX&_nc_oc=AdlOaV9oyKMBoQxGlT5AUbUWoK5mOO8wuUTEMEl-U5ydzv52uvSSyAMBFkbO7Eq_2bo&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=scontent.fkhi22-1.fna&oh=03_Q7cD2gFSniT6VN0ev2DKFkJV8KSFNrWZYA9cohC7ZiMIlBn_DQ&oe=68813B84', 'Rs 1200', 'نمرہ احمد', 'ایک دلچسپ کہانی جو محبت، دوستی اور زندگی کے مختلف پہلوؤں کو بیان کرتی ہے۔')">
+            <img src="https://scontent.fkhi22-1.fna.fbcdn.net/v/t1.15752-9/496514265_989348969943237_5007653057445102993_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=0024fc&_nc_ohc=BjDstEjR8OYQ7kNvwGHKyRX&_nc_oc=AdlOaV9oyKMBoQxGlT5AUbUWoK5mOO8wuUTEMEl-U5ydzv52uvSSyAMBFkbO7Eq_2bo&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=scontent.fkhi22-1.fna&oh=03_Q7cD2gFSniT6VN0ev2DKFkJV8KSFNrWZYA9cohC7ZiMIlBn_DQ&oe=68813B84" alt="Jannat Ke Pattay">
+            <h3>Umm ul Yaqeen</h3>
+            <p class="pricee">Rs 2100</p>
+        </div>
+
+        <div class="book-card" onclick="openView('راہ نور', 'https://scontent.fkhi22-1.fna.fbcdn.net/v/t1.15752-9/506754901_1222638169359970_70782420203514088_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=0024fc&_nc_ohc=Xa5aCnw5I58Q7kNvwEUULSk&_nc_oc=Adk-yMBX3iqUWCV-xMtN_TsX_NrfP1LlMPD_PDqU2gMjBmE671ITrU_VtiJ9SaB-8Kc&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=scontent.fkhi22-1.fna&oh=03_Q7cD2gFdQL7phJF0IzUY_grdEy5k5fAaSIBS_iWlcGanPZCVTQ&oe=68814DEF', 'Rs 1100', 'نامعلوم', 'تخلیقی لکھنے کے لیے ایک بہترین جرنل۔')">
+            <img id=book src="https://scontent.fkhi22-1.fna.fbcdn.net/v/t1.15752-9/506754901_1222638169359970_70782420203514088_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=0024fc&_nc_ohc=Xa5aCnw5I58Q7kNvwEUULSk&_nc_oc=Adk-yMBX3iqUWCV-xMtN_TsX_NrfP1LlMPD_PDqU2gMjBmE671ITrU_VtiJ9SaB-8Kc&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=scontent.fkhi22-1.fna&oh=03_Q7cD2gFdQL7phJF0IzUY_grdEy5k5fAaSIBS_iWlcGanPZCVTQ&oe=68814DEF">
+            <h3>Rah e Noor</h3>
+            <p class="pricee">Rs 1600</p>
+        </div>
+        
+        
+        <div class="book-card" onclick="openView('میں انمول', 'anmol_g.png', 'Rs 1200', 'نمرہ احمد', 'ایک دلچسپ کہانی جو محبت، دوستی اور زندگی کے مختلف پہلوؤں کو بیان کرتی ہے۔')">
+            <img src="anmol_g.png" alt="Jannat Ke Pattay">
+            <h3>Mai Anmol</h3>
+            <p class="pricee">Rs 1900</p>
+        </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- Modal Structure -->
+    <div id="bookModal" class="modal-overlay" onclick="closeModal(event)">
+        <div class="modal-content" onclick="event.stopPropagation()">
+            <button class="close-btn" onclick="closeModal()">&times;</button>
+            
+            <div class="modal-left">
+                <h1 id="modalTitle" class="book-title">Book Title</h1>
+                <div id="modalAuthor" class="book-details">Author Name</div>
+                <div id="modalPrice" class="book-price">Price</div>
+                <div id="modalDescription" class="book-description">Book description goes here...</div>
+                
+                <div class="action-buttons">
+                    <button class="btn btn-primary" onclick="addToCart()">Add to Cart</button>
+                    <button class="btn btn-secondary" onclick="viewPreview()">Preview</button>
+                </div>
+            </div>
+            
+            <div class="modal-right">
+                <div class="book-showcase">
+                    <img id="modalBookImage" src="" alt="Book Cover">
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <footer>
+        
+    </footer>
+        
+    </body>
+</html>

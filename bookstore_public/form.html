@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" href="form.css">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BookClub Registration Form</title>
+    <link href="form.css" rel="stylesheet"/>
+    
+  </head>
+  <body>
+    <div class="menu">
+      <main>
+        <h1 id="title">Book Club Registration Form</h1>
+        <p id="description"></p>
+        <form id="survey-form">
+          <fieldset>
+         <label for="name-label">Name: <input id="name" type="text" name="name" placeholder="Enter your name..."/></label>
+         
+         <label for="email-label">Email: <input id="email" type="email" name="email" placeholder="Enter your email..."/></label>
+         
+         <label for="number-label">Age: <input id="number" type="number" name="number" min="8" max="60" placeholder="Enter your age..."/></label>
+        
+         <label for="number-label">Phone Number: <input id="number" type="text" name="number" placeholder="Enter your Phone Number..."/></label>
+         
+        <label for="recommend-label">Which option best describes your current role: 
+          
+          <select id="recommend" name="recommend">
+            <option value="">(select one)</option>
+            <option value="1">Student</option>
+            <option value="2">Teacher</option>
+            <option value="3">Full Time Job</option>
+            <option value="4">Other</option>
+          </select>
+         </label>
+
+
+         <label for="rate-label">Which book would you like to be discussed in te book club event
+         
+          <select id="rate" name="rate">
+            <option value="">(select one)</option>
+            <option value="1">Jannat Kai pattay</option>
+            <option value="2">Namal</option>
+            <option value="3">Mala</option>
+            <option value="4">Home Girl</option>
+          </select>
+         </label>
+
+         <br>
+         <label>Which day would you be available for the event? </label>
+         
+         <label for="Def-label"><input id="def" type="radio" name="def" class="inline" />
+          Saturday 22nd April 2025
+         </label>
+         <label for="M-label"><input id="maybe" type="radio" name="maybe" class="inline" />
+          Friday 28th April 2025
+         </label>
+         <label for="No-label"><input id="no" type="radio" name="no" class="inline"/>
+          Wednesday 4th May 2025
+         </label>
+        
+         <br>
+
+         <label>How would you like the bookclub event to be scheduled? </label>
+         
+         <label for="Def-label"><input id="def" type="radio" name="def" class="inline" />
+          Bi-weekly
+         </label>
+         <label for="M-label"><input id="maybe" type="radio" name="maybe" class="inline" />
+          Monthly
+         </label>
+         <label for="No-label"><input id="no" type="radio" name="no" class="inline"/>
+          Bi-Monthly
+         </label>
+        
+
+        <br>
+        <label>Attach any additional material here
+        <input type="file" name="file" id="file"/>
+        </label>
+
+        <label>Additional Comments Or Suggestions:
+       <textarea id="comments" name="comments" rows="3" cols="60" placeholder="......."> </textarea> 
+        </label>
+
+       
+        <input type="Submit" id="submit" value="Submit" name="Submit-button" />
+        
+      
+
+        </fieldset>
+        </form>
+        </main>
+        </body>
+        </html>
