@@ -1,6 +1,8 @@
 ## Awraq-BookStore
 A full-stack web application for browsing and purchasing Urdu books, designed with authentic Urdu typography 
+
 Live demo: https://auraaq-bookstore.netlify.app/#bookclub
+
 ## Features
 - Browse Urdu books 
 - Shopping cart and checkout system
